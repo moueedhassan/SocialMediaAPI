@@ -21,7 +21,7 @@ app = FastAPI()
 
 while True:
     try:
-        conn = psycopg2.connect(host='', database='i',
+        conn = psycopg2.connect(host='', database='',
                                 user='', password="", cursor_factory=RealDictCursor)
         cursor = conn.cursor()
         print("Database connection was succesful!")
