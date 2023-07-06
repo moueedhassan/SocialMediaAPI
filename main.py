@@ -8,6 +8,19 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
+while True:
+    try:
+        conn = psycopg2.connect(host='localhost', database='fastapi',
+                                user='postgres', password="Allah7866", cursor_factory=RealDictCursor)
+        cursor = conn.cursor()
+        print("Database connection was succesful!")
+        break
+    except Exception as error:
+        print("Connection to database failed")
+        print("Error", error)
+        time.sleep(2)
+
+
 @app.get("/")
 async def root():
     return {"message": "Welcome to my API!"}
