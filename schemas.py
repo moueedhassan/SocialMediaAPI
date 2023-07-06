@@ -5,7 +5,8 @@ from typing import Optional
 class PostBase(BaseModel):
     title: str
     content: str
-    published: bool = True   
+    published: bool = True 
+    
 
 class PostCreate(PostBase):
     pass 
@@ -13,6 +14,7 @@ class PostCreate(PostBase):
 class Post(PostBase):
     id: int
     created_at: datetime
+    user_id: int   
 
     class Config:
         orm_mode = True
@@ -43,5 +45,3 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     id: Optional[str] = None
-
-#PYDANTIC IS ONLY FOR HTTP STRUCTURE
