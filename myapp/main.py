@@ -21,7 +21,7 @@ Base.metadata.create_all(bind=engine)
 
 @app.get("/")
 def root():
-    return {"message": "Welcome to my API!"}
+    return {"message": "Welcome to my API :-)"}
 
 app.include_router(post.router)
 app.include_router(user.router)
